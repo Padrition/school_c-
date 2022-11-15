@@ -12,7 +12,7 @@ private:
     public:
     Player(int x, int y);
     Coords getPlayerCoords();
-    void setPlayerCoords();
+    void setPlayerCoords(int x, int y);
     void parseEvent();
 };
 #endif
