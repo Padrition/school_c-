@@ -1,8 +1,9 @@
 #ifndef EVENTHANDLER_H
 #define EVENTHANDLER_H
 class EventHandler{
-    private:
+    protected:
     EventHandler();
+    ~EventHandler();
 
     public:
     virtual void handle() = 0;
