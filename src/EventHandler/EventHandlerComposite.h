@@ -2,6 +2,7 @@
 #define EVENTHANDLERCOMPOSITE_H
 #include "EventHandler.h"
 #include <vector>
+#include "ftxui/component"
 class EventHandlerComposite : protected EventHandler{
     private:
     std::vector<EventHandler *> eventChildren;
