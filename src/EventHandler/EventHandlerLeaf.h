@@ -2,7 +2,7 @@
 #define EVENTHANDLERLEAF_H
 #include <EventHandler.h>
 #include <component.hpp>
-class EventHandlerLeaf : protected EventHandler{
+class EventHandlerLeaf : public EventHandler{
     private:
     ftxui::Event uniqueEvent;
 

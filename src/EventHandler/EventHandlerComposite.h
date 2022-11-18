@@ -4,7 +4,7 @@
 #include <vector>
 #include <component.hpp>
 #include "EventHandlerLeaf.h"
-class EventHandlerComposite : protected EventHandler{
+class EventHandlerComposite : public EventHandler{
     private:
     std::vector<EventHandlerLeaf *> eventChildren;
     ftxui::Event currentEvent;
