@@ -1,0 +1,9 @@
+# Team project for Mendel University in Brno
+## Build project
+Project must be build using CMake
+```
+mkdir build && cd build
+cmake ..
+make
+```
+After these comands an executable will appear
