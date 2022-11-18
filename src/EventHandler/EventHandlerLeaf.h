@@ -10,6 +10,6 @@ class EventHandlerLeaf : protected EventHandler{
     ftxui::Event getUniqueEvent(){
         return uniqueEvent;
     };
-    virtual void handle();
+    virtual void handle() = 0;
 };
 #endif
