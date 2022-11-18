@@ -3,7 +3,7 @@
 #include <EventHandler.h>
 #include <component.hpp>
 class EventHandlerLeaf : public EventHandler{
-    private:
+    protected:
     ftxui::Event uniqueEvent;
 
     public:
