@@ -4,6 +4,7 @@
 #include <vector>
 #include <component.hpp>
 #include "EventHandlerLeaf.h"
+#include <E_PlayerMoveRight.h>
 class EventHandlerComposite : public EventHandler{
     private:
     std::vector<EventHandlerLeaf *> eventChildren;
