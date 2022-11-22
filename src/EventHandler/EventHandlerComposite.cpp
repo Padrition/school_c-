@@ -5,6 +5,7 @@
 EventHandlerComposite::EventHandlerComposite(Mediator * mediator){
     this->mediator = mediator;
     eventChildren.push_back(new E_PlayerMoveRight(mediator->getPlayer()));
+    eventChildren.push_back(new E_PlayerMoveLeft(mediator->getPlayer()));
 }
 
 void EventHandlerComposite::handle(){}
