@@ -1,8 +1,11 @@
 #ifndef SCENE_H
 #define SCENE_H
 #include "../Player/Player.h"
+#include "../Map/Map.h"
 class Scene{
     Player * player;
+    map currentMap;
+    bool checkPlayerMove(int x, int y);
 
     public:
     Scene();
@@ -11,5 +14,6 @@ class Scene{
     void movePlayerLeft();
     void movePlayerUp();
     void movePlayerDown();
+    void setMap(map m);
 };
 #endif
