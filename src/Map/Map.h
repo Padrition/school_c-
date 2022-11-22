@@ -22,11 +22,9 @@ const map map1 = {
 };
 
 class Map{
-    std::vector<map> savedMaps;
+    static std::vector<map> savedMaps;
 
     public:
-    Map();
-    map getMap(unsigned inex);
-
+    static map getMap(unsigned inex);
 };
 #endif
