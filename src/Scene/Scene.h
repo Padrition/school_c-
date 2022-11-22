@@ -5,6 +5,11 @@ class Scene{
     Player * player;
 
     public:
-    Scene(Player * player);
+    Scene();
+    void setPlayer(Player * player);
+    void movePlayerRight();
+    void movePlayerLeft();
+    void movePlayerUp();
+    void movePlayerDown();
 };
 #endif

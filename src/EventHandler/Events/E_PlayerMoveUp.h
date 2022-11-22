@@ -1,13 +1,11 @@
 #ifndef E_PLAYERMOVEUP_H
 #define E_PLAYERMOVEUP_H
 #include "../EventHandlerLeaf.h"
-#include "../../Player/Player.h"
-class E_PlayerMoveUp : public EventHandlerLeaf{
-    private:
-    Player * player;
-
+#include "../../Scene/Scene.h"
+#include "E_PlayerMove.h"
+class E_PlayerMoveUp : public EventHandlerLeaf, public E_PlayerMove{
     public:
-    E_PlayerMoveUp(Player * player);
+    E_PlayerMoveUp(Scene * scene);
     void handle();
 };
 #endif

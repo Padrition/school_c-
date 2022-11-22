@@ -1,13 +1,11 @@
 #ifndef E_PLAYERMOVELEFT_H
 #define E_PLAYERMOVELEFT_H
 #include "../EventHandlerLeaf.h"
-#include "../../Player/Player.h"
-class E_PlayerMoveLeft : public EventHandlerLeaf{
-    private:
-    Player * player;
-
+#include "E_PlayerMove.h"
+#include "../../Scene/Scene.h"
+class E_PlayerMoveLeft : public EventHandlerLeaf, public E_PlayerMove{
     public:
-    E_PlayerMoveLeft(Player * player);
+    E_PlayerMoveLeft(Scene * scene);
     void handle();
 
 };
