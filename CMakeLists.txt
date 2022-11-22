@@ -21,9 +21,11 @@ project(zoohra
   LANGUAGES CXX
   VERSION 1.0.0
 )
- 
-add_executable(zoohra src/main.cpp)
-target_include_directories(zoohra PRIVATE src)
+
+file(GLOB_RECURSE SRC_FILES src/*.cpp)
+add_executable(zoohra src/main.cpp src/Scene/Scene.cpp src/Player/Player.cpp src/EventHandler/EventHandler.h src/EventHandler/EventHandlerComposite.cpp
+src/EventHandler/Events/E_PlayerMoveRight.cpp src/Mediator/Mediator.cpp)
+target_include_directories(zoohra PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
  
 target_link_libraries(zoohra
   PRIVATE ftxui::screen

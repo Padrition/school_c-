@@ -1,5 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+#include <string>
 struct Coords{
         int x;
         int y;
@@ -14,5 +15,6 @@ private:
     Coords getPlayerCoords();
     void setPlayerCoords(int x, int y);
     void parseEvent();
+    std::string coordsToString();
 };
 #endif

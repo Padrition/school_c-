@@ -1,23 +1,22 @@
 #include "EventHandlerComposite.h"
-using namespace ftxui;
+#include <memory>
+
 //In the constructor we want to add all EventChildren to eventChildren_ vector
-EventHandlerComposite::EventHandlerComposite(){
-    //eventChildren.push_back(new E_PlayerMoveRight());
+EventHandlerComposite::EventHandlerComposite(Mediator * mediator){
+    this->mediator = mediator;
+    eventChildren.push_back(new E_PlayerMoveRight(mediator->getPlayer()));
 }
 
-//this method will derevate all the task to its children by calling handle() method from
-//The needed child 
-void EventHandlerComposite::handle(){
-    for(EventHandlerLeaf * child : eventChildren){
-        if(child->getUniqueEvent() == currentEvent){
-            child->handle();
+void EventHandlerComposite::handle(){}
+
+void EventHandlerComposite::listen(Component &renderer){
+    renderer |= CatchEvent([&](Event event){
+        for(auto child : eventChildren){
+            if(child->getEventSignature() == event){
+                child->handle();
+                return true;
+            }
         }
-    }
-}
-
-void EventHandlerComposite::listen(){
-    CatchEvent([&](Event event){
-        currentEvent = event;
-        return true;
+        return false;
     });
 }

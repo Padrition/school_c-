@@ -2,18 +2,21 @@
 #define EVENTHANDLERCOMPOSITE_H
 #include "EventHandler.h"
 #include <vector>
-#include <component.hpp>
 #include "EventHandlerLeaf.h"
-#include <E_PlayerMoveRight.h>
+#include "Events/E_PlayerMoveRight.h"
+#include "../Mediator/Mediator.h"
+using namespace ftxui;
 class EventHandlerComposite : public EventHandler{
     private:
     std::vector<EventHandlerLeaf *> eventChildren;
-    ftxui::Event currentEvent;
+    Mediator * mediator;
+    void handle();
 
     public:
+    Scene * scene;
+    std::vector<ftxui::Event> events;
     //In this constructor we want to add all Events to eventChildren_ vector
-    EventHandlerComposite();
-    void listen();
-    void handle();
+    EventHandlerComposite(Mediator * mediator);
+    void listen(Component &renderer);
 };
 #endif
