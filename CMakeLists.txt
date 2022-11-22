@@ -26,7 +26,8 @@ file(GLOB_RECURSE SRC_FILES src/*.cpp)
 add_executable(zoohra src/main.cpp src/Scene/Scene.cpp src/Player/Player.cpp
 src/EventHandler/EventHandler.h src/EventHandler/EventHandlerComposite.cpp
 src/EventHandler/Events/E_PlayerMoveRight.cpp src/Mediator/Mediator.cpp
-src/EventHandler/Events/E_PlayerMoveLeft.cpp)
+src/EventHandler/Events/E_PlayerMoveLeft.cpp
+src/EventHandler/Events/E_PlayerMoveUp.cpp src/EventHandler/Events/E_PlayerMoveDown.cpp)
 target_include_directories(zoohra PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
  
 target_link_libraries(zoohra

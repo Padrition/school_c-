@@ -2,7 +2,7 @@
 using namespace ftxui;
 
 E_PlayerMoveRight::E_PlayerMoveRight(Player * player){
-    eventSignature = Event::Character('d');
+    eventSignature = Event::Character(M_RIGHT);
     this->player = player;
 }
 

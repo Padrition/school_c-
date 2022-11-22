@@ -5,6 +5,8 @@
 #include "EventHandlerLeaf.h"
 #include "Events/E_PlayerMoveRight.h"
 #include "Events/E_PlayerMoveLeft.h"
+#include "Events/E_PlayerMoveDown.h"
+#include "Events/E_PlayerMoveUp.h"
 #include "../Mediator/Mediator.h"
 using namespace ftxui;
 class EventHandlerComposite : public EventHandler{

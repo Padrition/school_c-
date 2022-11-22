@@ -4,6 +4,10 @@
 #include <ftxui/component/component.hpp>
 class EventHandlerLeaf : public EventHandler{
     protected:
+    const char M_RIGHT = 'd';
+    const char M_LEFT = 'a';
+    const char M_UP = 'w';
+    const char M_DOWN = 's';
     ftxui::Event eventSignature;
 
     public:
