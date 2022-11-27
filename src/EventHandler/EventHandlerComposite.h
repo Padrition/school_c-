@@ -11,15 +11,16 @@
 using namespace ftxui;
 class EventHandlerComposite : public EventHandler{
     private:
-    std::vector<EventHandlerLeaf *> eventChildren;
-    Mediator * mediator;
+    std::vector<EventHandlerLeaf *> m_eventChildren;
+    Mediator * m_mediator;
     void handle();
+    void populateEventChildren();
 
     public:
-    Scene * scene;
     std::vector<ftxui::Event> events;
-    //In this constructor we want to add all Events to eventChildren_ vector
-    EventHandlerComposite(Mediator * mediator);
+    EventHandlerComposite();
     void listen(Component &renderer);
+    void setMediator(Mediator * mediator);
+    Mediator* getMediator();
 };
 #endif

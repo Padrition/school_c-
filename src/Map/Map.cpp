@@ -9,3 +9,7 @@ map Map::getMap(unsigned index){
         return savedMaps[0];
     }
 }
+
+void Map::setMediator(Mediator *mediator) {
+    this->m_mediator = mediator;
+}

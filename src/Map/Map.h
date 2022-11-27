@@ -2,6 +2,7 @@
 #define MAP_H
 
 #include <vector>
+#include "../Mediator/Mediator.h"
 
 typedef enum mapEntity{WALL, ____}mapEntity;
 
@@ -22,9 +23,12 @@ const map map1 = {
 };
 
 class Map{
+protected:
+    Mediator * m_mediator;
     static std::vector<map> savedMaps;
 
     public:
-    static map getMap(unsigned inex);
+    static map getMap(unsigned index);
+    void setMediator(Mediator * mediator);
 };
 #endif

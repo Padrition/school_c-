@@ -1,52 +1,12 @@
 #include "Scene.h"
 
-Scene::Scene(){}
-
-void Scene::setPlayer(Player * player){
-    this->player = player;
+Scene::Scene(Player * player, Map * map, EventHandlerComposite * ehc) : m_player(player), m_map(map), m_ehc(ehc){
+    this->m_player->setMediator(this);
+    this->m_ehc->setMediator(this);
+    this->m_map->setMediator(this);
 }
 
-void Scene::setMap(map m){
-    this->currentMap = m;
+void Scene::notify(std::string msg) {
+
 }
 
-bool Scene::checkPlayerMove(int x, int y){
-    auto row = currentMap[y];
-    if(row[x] != mapEntity::WALL){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-void Scene::movePlayerDown(){
-    auto coords = this->player->getPlayerCoords();
-    coords.y -= 1;
-    if(checkPlayerMove(coords.x, coords.y)){
-        this->player->setPlayerCoords(coords.x, coords.y);
-    }
-}
-
-void Scene::movePlayerUp(){
-    auto coords = this->player->getPlayerCoords();
-    coords.y += 1;
-    if(checkPlayerMove(coords.x, coords.y)){
-        this->player->setPlayerCoords(coords.x, coords.y);
-    }
-}
-
-void Scene::movePlayerRight(){
-    auto coords = this->player->getPlayerCoords();
-    coords.x += 1;
-    if(checkPlayerMove(coords.x, coords.y)){
-        this->player->setPlayerCoords(coords.x, coords.y);
-    }
-}
-
-void Scene::movePlayerLeft(){
-    auto coords = this->player->getPlayerCoords();
-    coords.x -= 1;
-    if(checkPlayerMove(coords.x, coords.y)){
-        this->player->setPlayerCoords(coords.x, coords.y);
-    }
-}

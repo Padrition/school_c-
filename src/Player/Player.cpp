@@ -17,6 +17,6 @@ std::string Player::coordsToString(){
     return "Player x:" + std::to_string(coords.x) + " Player y:" + std::to_string(coords.y) ;
 }
 
-void Player::parseEvent(){
-    //TODO
+void Player::setMediator(Mediator *mediator) {
+    this->m_mediator = mediator;
 }

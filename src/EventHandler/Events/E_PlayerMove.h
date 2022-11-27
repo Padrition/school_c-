@@ -7,6 +7,6 @@ class E_PlayerMove{
     const char M_LEFT = 'a';
     const char M_UP = 'w';
     const char M_DOWN = 's';
-    Scene * scene;
+    Mediator * m_mediator;
 };
 #endif

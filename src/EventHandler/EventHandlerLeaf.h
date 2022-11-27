@@ -4,11 +4,11 @@
 #include <ftxui/component/component.hpp>
 class EventHandlerLeaf : public EventHandler{
     protected:
-    ftxui::Event eventSignature;
+    ftxui::Event m_eventSignature;
 
     public:
     ftxui::Event getEventSignature(){
-        return eventSignature;
+        return m_eventSignature;
     };
     virtual void handle() = 0;
 };
