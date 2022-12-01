@@ -11,12 +11,12 @@ using namespace ftxui;
 class EventHandlerComposite : public EventHandler{
     private:
     std::vector<EventHandlerLeaf *> m_eventChildren;
-    void handle();
+    std::shared_ptr<ComponentBase> renderer;
     void populateEventChildren();
 
     public:
     std::vector<ftxui::Event> events;
     EventHandlerComposite();
-    void listen(Component &renderer);
+    void handle() override;
 };
 #endif

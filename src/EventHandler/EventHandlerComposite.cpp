@@ -1,15 +1,11 @@
 #include "EventHandlerComposite.h"
 #include <memory>
 
-//In the constructor we want to add all EventChildren to eventChildren_ vector
 EventHandlerComposite::EventHandlerComposite(){
     this->populateEventChildren();
 }
 
-
-void EventHandlerComposite::handle(){}
-
-void EventHandlerComposite::listen(Component &renderer){
+void EventHandlerComposite::handle(){
     renderer |= CatchEvent([&](Event event){
         for(auto child : m_eventChildren){
             if(child->getEventSignature() == event){
