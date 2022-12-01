@@ -7,12 +7,10 @@
 #include "Events/E_PlayerMoveLeft.h"
 #include "Events/E_PlayerMoveDown.h"
 #include "Events/E_PlayerMoveUp.h"
-#include "../Mediator/Mediator.h"
 using namespace ftxui;
 class EventHandlerComposite : public EventHandler{
     private:
     std::vector<EventHandlerLeaf *> m_eventChildren;
-    Mediator * m_mediator;
     void handle();
     void populateEventChildren();
 
@@ -20,7 +18,5 @@ class EventHandlerComposite : public EventHandler{
     std::vector<ftxui::Event> events;
     EventHandlerComposite();
     void listen(Component &renderer);
-    void setMediator(Mediator * mediator);
-    Mediator* getMediator();
 };
 #endif

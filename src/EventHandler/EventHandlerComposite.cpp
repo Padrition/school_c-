@@ -2,7 +2,9 @@
 #include <memory>
 
 //In the constructor we want to add all EventChildren to eventChildren_ vector
-EventHandlerComposite::EventHandlerComposite(){}
+EventHandlerComposite::EventHandlerComposite(){
+    this->populateEventChildren();
+}
 
 
 void EventHandlerComposite::handle(){}
@@ -19,18 +21,9 @@ void EventHandlerComposite::listen(Component &renderer){
     });
 }
 
-Mediator* EventHandlerComposite::getMediator() {
-    return this->m_mediator;
-}
-
-void EventHandlerComposite::setMediator(Mediator * mediator) {
-    this->m_mediator;
-    this->populateEventChildren();
-}
-
 void EventHandlerComposite::populateEventChildren() {
-    this->m_eventChildren.push_back(new E_PlayerMoveDown(this->getMediator()));
-    this->m_eventChildren.push_back(new E_PlayerMoveUp(this->getMediator()));
-    this->m_eventChildren.push_back(new E_PlayerMoveLeft(this->getMediator()));
-    this->m_eventChildren.push_back(new E_PlayerMoveRight(this->getMediator()));
+    this->m_eventChildren.push_back(new E_PlayerMoveDown());
+    this->m_eventChildren.push_back(new E_PlayerMoveUp());
+    this->m_eventChildren.push_back(new E_PlayerMoveLeft());
+    this->m_eventChildren.push_back(new E_PlayerMoveRight());
 }
