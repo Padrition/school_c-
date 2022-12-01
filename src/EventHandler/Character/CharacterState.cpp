@@ -3,3 +3,7 @@
 //
 
 #include "CharacterState.h"
+
+void CharacterState::setCharacter(Character *character) {
+    this->_character = character;
+}
