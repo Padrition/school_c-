@@ -23,6 +23,8 @@ public:
     void transitionTo(CharacterState* state);
     void fight(Character* character);
     void move(int horizontal, int vertical);
+    void setPosition(int horizontal, int vertival);
+    Coords getPosition();
 };
 
 

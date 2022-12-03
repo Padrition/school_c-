@@ -26,3 +26,11 @@ void Character::fight(Character *character) {
 void Character::move(int horizontal, int vertical) {
     this->_state->move(horizontal, vertical);
 }
+
+void Character::setPosition(int horizontal, int vertival) {
+    this->_position = {horizontal, vertival};
+}
+
+Coords Character::getPosition() {
+    return this->_position;
+}
