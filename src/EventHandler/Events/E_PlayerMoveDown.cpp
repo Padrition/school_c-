@@ -6,4 +6,5 @@ E_PlayerMoveDown::E_PlayerMoveDown(Character * player){
 }
 
 void E_PlayerMoveDown::handle(){
+    this->_player->move(0, -1);
 }

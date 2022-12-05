@@ -7,5 +7,5 @@ E_PlayerMoveUp::E_PlayerMoveUp(Character * player){
 }
 
 void E_PlayerMoveUp::handle(){
-
+    this->_player->move(0,1);
 }

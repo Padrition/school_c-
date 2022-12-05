@@ -7,5 +7,5 @@ E_PlayerMoveRight::E_PlayerMoveRight(Character * player){
 }
 
 void E_PlayerMoveRight::handle(){
-
+    this->_player->move(1, 0);
 }
