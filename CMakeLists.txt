@@ -29,7 +29,7 @@ src/EventHandler/Events/E_PlayerMoveRight.cpp
         src/EventHandler/Events/E_PlayerMoveLeft.cpp
 src/EventHandler/Events/E_PlayerMoveUp.cpp src/EventHandler/Events/E_PlayerMoveDown.cpp
 src/EventHandler/Events/E_PlayerMove.h
-        src/EventHandler/Character/Character.cpp src/EventHandler/Character/Character.h src/EventHandler/Character/CharacterState.cpp src/EventHandler/Character/CharacterState.h src/EventHandler/Hero/Hero.cpp src/EventHandler/Hero/Hero.h)
+        src/Character/Character.cpp src/Character/Character.h src/Character/CharacterState.cpp src/Character/CharacterState.h src/Hero/Hero.cpp src/Hero/Hero.h)
 target_include_directories(zoohra PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
  
 target_link_libraries(zoohra

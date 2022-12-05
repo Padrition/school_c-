@@ -1,7 +1,7 @@
 #ifndef E_PLAYERMOVE_H
 #define E_PLAYERMOVE_H
 
-#include "../Character/Character.h"
+#include "../../Character/Character.h"
 
 class E_PlayerMove{
     protected:
