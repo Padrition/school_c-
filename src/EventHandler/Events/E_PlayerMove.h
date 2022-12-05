@@ -9,6 +9,6 @@ class E_PlayerMove{
     const char M_LEFT = 'a';
     const char M_UP = 'w';
     const char M_DOWN = 's';
-    Character * player;
+    Character * _player;
 };
 #endif

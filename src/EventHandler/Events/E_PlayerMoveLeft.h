@@ -4,7 +4,7 @@
 #include "E_PlayerMove.h"
 class E_PlayerMoveLeft : public EventHandlerLeaf, public E_PlayerMove{
     public:
-    E_PlayerMoveLeft();
+    E_PlayerMoveLeft(Character * player);
     void handle();
 
 };
