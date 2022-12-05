@@ -1,8 +1,8 @@
 #include "EventHandlerComposite.h"
 #include <memory>
 
-EventHandlerComposite::EventHandlerComposite(){
-    this->populateEventChildren();
+EventHandlerComposite::EventHandlerComposite(Character * player){
+    this->populateEventChildren(player);
 }
 
 void EventHandlerComposite::handle(){
@@ -17,9 +17,9 @@ void EventHandlerComposite::handle(){
     });
 }
 
-void EventHandlerComposite::populateEventChildren() {
-    this->m_eventChildren.push_back(new E_PlayerMoveDown());
-    this->m_eventChildren.push_back(new E_PlayerMoveUp());
-    this->m_eventChildren.push_back(new E_PlayerMoveLeft());
-    this->m_eventChildren.push_back(new E_PlayerMoveRight());
+void EventHandlerComposite::populateEventChildren(Character* player) {
+    this->m_eventChildren.push_back(new E_PlayerMoveDown(player));
+    this->m_eventChildren.push_back(new E_PlayerMoveUp(player));
+    this->m_eventChildren.push_back(new E_PlayerMoveLeft(player));
+    this->m_eventChildren.push_back(new E_PlayerMoveRight(player));
 }

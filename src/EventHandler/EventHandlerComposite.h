@@ -12,11 +12,10 @@ class EventHandlerComposite : public EventHandler{
     private:
     std::vector<EventHandlerLeaf *> m_eventChildren;
     std::shared_ptr<ComponentBase> renderer;
-    void populateEventChildren();
+    void populateEventChildren(Character * player);
 
     public:
-    std::vector<ftxui::Event> events;
-    EventHandlerComposite();
+    EventHandlerComposite(Character * player);
     void handle() override;
 };
 #endif
