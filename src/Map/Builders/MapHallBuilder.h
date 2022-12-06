@@ -11,6 +11,7 @@
 class MapHallBuilder : public MapBuilder{
 private:
     MapHall* _hall;
+    void reset() override;
 public:
     MapHallBuilder();
     ~MapHallBuilder();

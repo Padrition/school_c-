@@ -25,5 +25,11 @@ void MapHallBuilder::populateWithEnemies() {
 }
 
 Map *MapHallBuilder::build() {
-    return this->_hall;
+    Map* buildedHall = this->_hall;
+    this->reset();
+    return buildedHall;
+}
+
+void MapHallBuilder::reset() {
+    this->_hall = new MapHall();
 }

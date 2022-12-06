@@ -8,6 +8,8 @@
 #include "Map.h"
 
 class MapBuilder {
+protected:
+    virtual void reset() = 0;
 public:
     virtual void buildBorders() = 0;
     virtual void buildStructures() = 0;

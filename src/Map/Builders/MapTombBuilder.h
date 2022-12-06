@@ -11,7 +11,9 @@
 class MapTombBuilder : MapBuilder{
 private:
     MapTomb * _tomb;
+    void reset() override;
 
+public:
     MapTombBuilder();
     ~MapTombBuilder();
 

@@ -25,5 +25,12 @@ void MapTombBuilder::populateWithEnemies() {
 }
 
 Map *MapTombBuilder::build() {
-    return this->_tomb;
+    Map* buildedTomb = this->_tomb;
+    this->reset();
+    return buildedTomb;
+
+}
+
+void MapTombBuilder::reset() {
+    this->_tomb = new MapTomb();
 }
