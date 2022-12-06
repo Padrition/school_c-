@@ -20,6 +20,8 @@ private:
     void buildStructures() override;
 
     void populateWithEnemies() override;
+
+    Map *build() override;
 };
 
 

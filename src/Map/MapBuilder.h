@@ -5,12 +5,14 @@
 #ifndef ZOOHRA_MAPBUILDER_H
 #define ZOOHRA_MAPBUILDER_H
 
+#include "Map.h"
 
 class MapBuilder {
 public:
     virtual void buildBorders() = 0;
     virtual void buildStructures() = 0;
     virtual void populateWithEnemies() = 0;
+    virtual Map* build() = 0;
 };
 
 

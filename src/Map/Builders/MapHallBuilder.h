@@ -9,6 +9,8 @@
 #include "../Maps/MapHall.h"
 
 class MapHallBuilder : public MapBuilder{
+private:
+    MapHall* _hall;
 public:
     MapHallBuilder();
     ~MapHallBuilder();
@@ -17,6 +19,8 @@ public:
     void buildStructures() override;
 
     void populateWithEnemies() override;
+
+    Map *build() override;
 };
 
 

@@ -23,3 +23,7 @@ void MapTombBuilder::buildStructures() {
 void MapTombBuilder::populateWithEnemies() {
 
 }
+
+Map *MapTombBuilder::build() {
+    return this->_tomb;
+}

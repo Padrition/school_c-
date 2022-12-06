@@ -23,3 +23,7 @@ void MapHallBuilder::buildStructures() {
 void MapHallBuilder::populateWithEnemies() {
 
 }
+
+Map *MapHallBuilder::build() {
+    return this->_hall;
+}
