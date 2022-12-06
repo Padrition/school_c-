@@ -9,7 +9,7 @@
 #include "../Maps/MapTomb.h"
 
 class MapTombBuilder : MapBuilder{
-private:
+protected:
     MapTomb * _tomb;
     void reset() override;
 

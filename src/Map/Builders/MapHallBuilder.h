@@ -9,7 +9,7 @@
 #include "../Maps/MapHall.h"
 
 class MapHallBuilder : public MapBuilder{
-private:
+protected:
     MapHall* _hall;
     void reset() override;
 public:
