@@ -5,11 +5,11 @@
 #include "MapTombBuilder.h"
 
 MapTombBuilder::MapTombBuilder() {
-
+    this->_tomb = new MapTomb();
 }
 
 MapTombBuilder::~MapTombBuilder() {
-
+    delete this->_tomb;
 }
 
 void MapTombBuilder::buildBorders() {

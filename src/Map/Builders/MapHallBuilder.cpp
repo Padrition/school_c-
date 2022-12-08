@@ -5,11 +5,11 @@
 #include "MapHallBuilder.h"
 
 MapHallBuilder::MapHallBuilder() {
-
+    this->_hall = new MapHall();
 }
 
 MapHallBuilder::~MapHallBuilder() {
-
+    delete this->_hall;
 }
 
 void MapHallBuilder::buildBorders() {
