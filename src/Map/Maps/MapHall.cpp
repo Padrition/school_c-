@@ -32,3 +32,9 @@ int MapHall::randSize() {
 
     return distr(generator);
 }
+
+std::tuple<int, int> MapHall::getDimentions() {
+    int mapWidth = this->_map.size();
+    int mapLength = this->_map[0].size();
+    return std::tuple<int, int>(mapWidth, mapLength);
+}

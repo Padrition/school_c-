@@ -6,6 +6,7 @@
 #define ZOOHRA_MAPHALL_H
 
 #include "../Map.h"
+#include <tuple>
 
 class MapHall :public Map{
 private:
@@ -13,6 +14,7 @@ private:
     void init();
 public:
     MapHall();
+    std::tuple<int,int> getDimentions();
 };
 
 

@@ -13,6 +13,7 @@ private:
     void init();
 public:
     MapTomb();
+    int getDimentinos();
 
 };
 
