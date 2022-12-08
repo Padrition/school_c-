@@ -8,6 +8,11 @@
 #include "../Map.h"
 
 class MapTomb :public Map{
+private:
+    int randSize();
+    void init();
+public:
+    MapTomb();
 
 };
 

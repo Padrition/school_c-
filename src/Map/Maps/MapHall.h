@@ -8,7 +8,11 @@
 #include "../Map.h"
 
 class MapHall :public Map{
-
+private:
+    int randSize();
+    void init();
+public:
+    MapHall();
 };
 
 
