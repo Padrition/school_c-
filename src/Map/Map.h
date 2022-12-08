@@ -14,9 +14,11 @@ enum MapBlock{
     Empty,
 };
 
+typedef std::vector<std::vector<MapBlock>> mapGrid;
+
 class Map {
 protected:
-    std::vector<std::vector<MapBlock>> _map;
+    mapGrid _map;
     std::vector<Character *> _enemies;
     Character * _player;
 public:
