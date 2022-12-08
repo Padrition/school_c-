@@ -13,10 +13,10 @@ MapHall::MapHall() {
 //sets the map to empty space
 void MapHall::init() {
     int mapWidth = randSize();
-    int mapLength = mapWidth * 2;
+    int mapLat = mapWidth * 2;
 
     for(int row = 0; row < mapWidth; row++){
-        for(int column = 0; column < mapLength; column++){
+        for(int column = 0; column < mapLat; column++){
             this->_map[row][column] = MapBlock::Empty;
         }
     }
@@ -35,6 +35,10 @@ int MapHall::randSize() {
 
 std::tuple<int, int> MapHall::getDimentions() {
     int mapWidth = this->_map.size();
-    int mapLength = this->_map[0].size();
-    return std::tuple<int, int>(mapWidth, mapLength);
+    int mapLat = this->_map[0].size();
+    return std::tuple<int, int>(mapWidth, mapLat);
+}
+
+mapGrid &MapHall::getMapReference() {
+    return this->_map;
 }

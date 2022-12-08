@@ -14,6 +14,7 @@ private:
 public:
     MapTomb();
     int getDimentinos();
+    mapGrid& getMapReference();
 
 };
 

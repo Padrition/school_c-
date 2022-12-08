@@ -33,3 +33,7 @@ int MapTomb::getDimentinos() {
     int mapWidth = this->_map.size();
     return mapWidth;
 }
+
+mapGrid &MapTomb::getMapReference() {
+    return this->_map;
+}

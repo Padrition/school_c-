@@ -13,7 +13,14 @@ MapHallBuilder::~MapHallBuilder() {
 }
 
 void MapHallBuilder::buildBorders() {
+    int hallWidth = get<0>(this->_hall->getDimentions());
+    int hallLat = get<1>(this->_hall->getDimentions());
 
+    for(int row = 0; row < hallWidth; row = hallWidth - 1){
+        for(int column =0; column< hallLat; column++){
+            this->_hall->getMapReference()[row][column] = MapBlock::Wall;
+        }
+    }
 }
 
 void MapHallBuilder::buildStructures() {

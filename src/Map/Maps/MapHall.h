@@ -15,6 +15,7 @@ private:
 public:
     MapHall();
     std::tuple<int,int> getDimentions();
+    mapGrid& getMapReference();
 };
 
 
