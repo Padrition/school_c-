@@ -13,8 +13,8 @@ MapHallBuilder::~MapHallBuilder() {
 }
 
 void MapHallBuilder::buildBorders() {
-    int hallWidth = get<0>(this->_hall->getDimentions());
-    int hallLat = get<1>(this->_hall->getDimentions());
+    int hallWidth = std::get<0>(this->_hall->getDimentions());
+    int hallLat = std::get<1>(this->_hall->getDimentions());
 
     for(int row = 0; row < hallWidth; row = hallWidth - 1){
         for(int column =0; column< hallLat; column++){
