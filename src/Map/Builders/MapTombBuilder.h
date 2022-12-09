@@ -12,6 +12,7 @@
 class MapTombBuilder : MapBuilder{
 private:
     void buildDoors();
+    const int _maxEnemyCount = 5;
 protected:
     MapTomb * _tomb;
     void reset() override;

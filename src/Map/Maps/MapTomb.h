@@ -17,7 +17,7 @@ public:
     MapTomb();
     int getDimentinos();
     mapGrid& getMapReference();
-
+    void createEnemy();
 };
 
 

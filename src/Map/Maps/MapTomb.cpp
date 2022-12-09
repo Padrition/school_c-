@@ -3,8 +3,7 @@
 //
 
 #include "MapTomb.h"
-
-#include <random>
+#include "../../Enemy/Enemy.h"
 
 MapTomb::MapTomb() {
     init();
@@ -28,4 +27,14 @@ int MapTomb::getDimentinos() {
 
 mapGrid &MapTomb::getMapReference() {
     return this->_map;
+}
+
+void MapTomb::createEnemy() {
+    int mapWidth = this->getDimentinos();
+
+    int enemyRow = RandUtil::randInRange(1, mapWidth -1);
+    int enemyColumn = RandUtil::randInRange(1, mapWidth-1);
+
+    auto * enemy = new Character(new Enemy());
+    enemy->setPosition(enemyRow,enemyColumn);
 }

@@ -11,6 +11,7 @@
 class MapHallBuilder : public MapBuilder{
 private:
     void buildDoors();
+    const int _maxEnemyCount = 1;
 protected:
     MapHall* _hall;
     void reset() override;

@@ -28,6 +28,11 @@ void MapHallBuilder::buildStructures() {
 }
 
 void MapHallBuilder::populateWithEnemies() {
+    int enemiesCount = RandUtil::randInRange(0,_maxEnemyCount);
+
+    for(int i =0; i< enemiesCount; i++){
+        this->_hall->createEnemy();
+    }
 
 }
 

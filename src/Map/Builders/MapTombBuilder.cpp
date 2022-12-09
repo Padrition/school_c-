@@ -4,7 +4,6 @@
 
 #include "MapTombBuilder.h"
 
-#include <random>
 
 MapTombBuilder::MapTombBuilder() {
     this->_tomb = new MapTomb();
@@ -37,7 +36,11 @@ void MapTombBuilder::buildStructures() {
 }
 
 void MapTombBuilder::populateWithEnemies() {
+    int enemiesCount = RandUtil::randInRange(0, _maxEnemyCount);
 
+    for(int i = 0; i< enemiesCount; i++){
+        this->_tomb->createEnemy();
+    }
 }
 
 Map *MapTombBuilder::build() {

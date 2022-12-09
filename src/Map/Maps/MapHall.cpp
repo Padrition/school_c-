@@ -3,8 +3,7 @@
 //
 
 #include "MapHall.h"
-
-#include <random>
+#include "../../Enemy/Enemy.h"
 
 MapHall::MapHall() {
     init();
@@ -12,10 +11,10 @@ MapHall::MapHall() {
 
 //sets the map to empty space
 void MapHall::init() {
-    int mapWidth = RandUtil::randInRange(_smallestHallWidth, _biggestHallWidth);
-    int mapLat = mapWidth * 2;
+    int mapRow = RandUtil::randInRange(_smallestHallWidth, _biggestHallWidth);
+    int mapLat = mapRow * 2;
 
-    for(int row = 0; row < mapWidth; row++){
+    for(int row = 0; row < mapRow; row++){
         for(int column = 0; column < mapLat; column++){
             this->_map[row][column] = MapBlock::Empty;
         }
@@ -26,11 +25,22 @@ void MapHall::init() {
 
 
 std::tuple<int, int> MapHall::getDimentions() {
-    int mapWidth = this->_map.size();
+    int mapRow = this->_map.size();
     int mapLat = this->_map[0].size();
-    return std::tuple<int, int>(mapWidth, mapLat);
+    return std::tuple<int, int>(mapRow, mapLat);
 }
 
 mapGrid &MapHall::getMapReference() {
     return this->_map;
+}
+
+void MapHall::createEnemy() {
+    int mapRow = std::get<0>(this->getDimentions());
+    int mapColumn =  std::get<1>(this->getDimentions());
+
+    int enemyRow = RandUtil::randInRange(1 , mapRow -1);
+    int enemyColumn = RandUtil::randInRange(1, mapColumn -1);
+
+    auto * enemy = new Character(new Enemy());
+    enemy->setPosition(enemyRow, enemyColumn);
 }
