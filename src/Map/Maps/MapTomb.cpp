@@ -22,11 +22,9 @@ void MapTomb::init() {
 }
 
 int MapTomb::randSize() {
-    int smallestTombWidth = 5;
-    int biggestTombWidth = 12;
     std::random_device rand_dev;
     std::mt19937 generator(rand_dev());
-    std::uniform_int_distribution<int> distr(smallestTombWidth, biggestTombWidth);
+    std::uniform_int_distribution<int> distr(_smallestTombWidth, _biggestTombWidth);
 }
 
 int MapTomb::getDimentinos() {

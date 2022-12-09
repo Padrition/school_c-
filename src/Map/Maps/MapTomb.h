@@ -9,6 +9,8 @@
 
 class MapTomb :public Map{
 private:
+    const int _smallestTombWidth = 5;
+    const int _biggestTombWidth = 12;
     int randSize();
     void init();
 public:

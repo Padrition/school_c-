@@ -10,6 +10,8 @@
 
 class MapHall :public Map{
 private:
+    const int _smallestHallWidth = 3;
+    const int _biggestHallWidth = 5;
     int randSize();
     void init();
 public:

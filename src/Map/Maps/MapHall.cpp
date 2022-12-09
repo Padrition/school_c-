@@ -24,11 +24,9 @@ void MapHall::init() {
 }
 
 int MapHall::randSize() {
-    int smallestHallWidth = 3;
-    int biggestHallWidth = 5;
     std::random_device rand_dev;
     std::mt19937 generator(rand_dev());
-    std::uniform_int_distribution<int> distr(smallestHallWidth, biggestHallWidth);
+    std::uniform_int_distribution<int> distr(_smallestHallWidth, _biggestHallWidth);
 
     return distr(generator);
 }
