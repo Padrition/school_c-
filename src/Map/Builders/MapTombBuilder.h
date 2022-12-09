@@ -7,6 +7,7 @@
 
 #include "../MapBuilder.h"
 #include "../Maps/MapTomb.h"
+#include "../../RandUtil/RandUtil.h"
 
 class MapTombBuilder : MapBuilder{
 protected:

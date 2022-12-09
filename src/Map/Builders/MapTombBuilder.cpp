@@ -35,12 +35,8 @@ void MapTombBuilder::buildBorders() {
 void MapTombBuilder::buildStructures() {
     int tombWidth = this->_tomb->getDimentinos();
 
-    std::random_device rand_dev;
-    std::mt19937 generator(rand_dev());
-    std::uniform_int_distribution<int> distr(0, tombWidth);
-
-    int doorPlacementRow = distr(generator);
-    int doorPlacementColumn = distr(generator);
+    int doorPlacementRow = RandUtil::randInRange(0, tombWidth);
+    int doorPlacementColumn = RandUtil::randInRange(0, tombWidth);
 
     this->_tomb->getMapReference()[doorPlacementRow][doorPlacementColumn] = MapBlock::Door;
 
