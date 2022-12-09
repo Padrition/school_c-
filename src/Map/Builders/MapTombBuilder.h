@@ -10,6 +10,8 @@
 #include "../../RandUtil/RandUtil.h"
 
 class MapTombBuilder : MapBuilder{
+private:
+    void buildDoors();
 protected:
     MapTomb * _tomb;
     void reset() override;

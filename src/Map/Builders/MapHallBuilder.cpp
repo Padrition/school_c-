@@ -24,12 +24,7 @@ void MapHallBuilder::buildBorders() {
 }
 
 void MapHallBuilder::buildStructures() {
-    int hallRow = std::get<0>(this->_hall->getDimentions());
-    int hallColumn = std::get<1>(this->_hall->getDimentions());
-
-    int doorPlacementRow = hallRow / 2;
-    this->_hall->getMapReference()[doorPlacementRow][hallColumn] = MapBlock::Door;
-    this->_hall->getMapReference()[doorPlacementRow][0] = MapBlock::Door;
+    this->buildDoors();
 }
 
 void MapHallBuilder::populateWithEnemies() {
@@ -44,4 +39,13 @@ Map *MapHallBuilder::build() {
 
 void MapHallBuilder::reset() {
     this->_hall = new MapHall();
+}
+
+void MapHallBuilder::buildDoors() {
+    int hallRow = std::get<0>(this->_hall->getDimentions());
+    int hallColumn = std::get<1>(this->_hall->getDimentions());
+
+    int doorPlacementRow = hallRow / 2;
+    this->_hall->getMapReference()[doorPlacementRow][hallColumn] = MapBlock::Door;
+    this->_hall->getMapReference()[doorPlacementRow][0] = MapBlock::Door;
 }

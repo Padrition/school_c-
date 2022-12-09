@@ -9,6 +9,8 @@
 #include "../Maps/MapHall.h"
 
 class MapHallBuilder : public MapBuilder{
+private:
+    void buildDoors();
 protected:
     MapHall* _hall;
     void reset() override;

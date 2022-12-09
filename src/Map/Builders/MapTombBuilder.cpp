@@ -33,19 +33,7 @@ void MapTombBuilder::buildBorders() {
 }
 
 void MapTombBuilder::buildStructures() {
-    int tombWidth = this->_tomb->getDimentinos();
-
-    int doorPlacementRow = RandUtil::randInRange(0, tombWidth);
-    int doorPlacementColumn = RandUtil::randInRange(0, tombWidth);
-
-    this->_tomb->getMapReference()[doorPlacementRow][doorPlacementColumn] = MapBlock::Door;
-
-    int secDoorPlacementRow = doorPlacementColumn;
-    int secDoorPlacementColumn = doorPlacementRow;
-
-    this->_tomb->getMapReference()[secDoorPlacementRow][secDoorPlacementColumn] = MapBlock::Door;
-
-
+    this->buildDoors();
 }
 
 void MapTombBuilder::populateWithEnemies() {
@@ -61,4 +49,18 @@ Map *MapTombBuilder::build() {
 
 void MapTombBuilder::reset() {
     this->_tomb = new MapTomb();
+}
+
+void MapTombBuilder::buildDoors() {
+    int tombWidth = this->_tomb->getDimentinos();
+
+    int doorPlacementRow = RandUtil::randInRange(0, tombWidth);
+    int doorPlacementColumn = RandUtil::randInRange(0, tombWidth);
+
+    this->_tomb->getMapReference()[doorPlacementRow][doorPlacementColumn] = MapBlock::Door;
+
+    int secDoorPlacementRow = doorPlacementColumn;
+    int secDoorPlacementColumn = doorPlacementRow;
+
+    this->_tomb->getMapReference()[secDoorPlacementRow][secDoorPlacementColumn] = MapBlock::Door;
 }
