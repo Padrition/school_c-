@@ -6,12 +6,12 @@
 #define ZOOHRA_MAPTOMB_H
 
 #include "../Map.h"
+#include "../../RandUtil/RandUtil.h"
 
 class MapTomb :public Map{
 private:
     const int _smallestTombWidth = 5;
     const int _biggestTombWidth = 12;
-    int randSize();
     void init();
 public:
     MapTomb();
