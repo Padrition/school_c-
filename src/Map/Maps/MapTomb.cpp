@@ -30,11 +30,22 @@ mapGrid &MapTomb::getMapReference() {
 }
 
 void MapTomb::createEnemy() {
+    bool populated = false;
+
     int mapWidth = this->getDimentinos();
 
-    int enemyRow = RandUtil::randInRange(1, mapWidth -1);
-    int enemyColumn = RandUtil::randInRange(1, mapWidth-1);
+    while(!populated){
 
-    auto * enemy = new Character(new Enemy());
-    enemy->setPosition(enemyRow,enemyColumn);
+        int enemyRow = RandUtil::randInRange(1, mapWidth -1);
+        int enemyColumn = RandUtil::randInRange(1, mapWidth-1);
+
+        if(_map[enemyRow][enemyColumn] == Empty){
+            populated = true;
+            auto * enemy = new Character(new Enemy());
+            enemy->setPosition(enemyRow,enemyColumn);
+        }
+    }
+
+
+
 }

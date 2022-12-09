@@ -35,12 +35,19 @@ mapGrid &MapHall::getMapReference() {
 }
 
 void MapHall::createEnemy() {
+    bool populated = false;
     int mapRow = std::get<0>(this->getDimentions());
     int mapColumn =  std::get<1>(this->getDimentions());
 
-    int enemyRow = RandUtil::randInRange(1 , mapRow -1);
-    int enemyColumn = RandUtil::randInRange(1, mapColumn -1);
+    while(!populated){
+        int enemyRow = RandUtil::randInRange(1 , mapRow -1);
+        int enemyColumn = RandUtil::randInRange(1, mapColumn -1);
 
-    auto * enemy = new Character(new Enemy());
-    enemy->setPosition(enemyRow, enemyColumn);
+        if(_map[enemyRow][enemyColumn] == Empty){
+            populated = true;
+            auto * enemy = new Character(new Enemy());
+            enemy->setPosition(enemyRow, enemyColumn);
+        }
+    }
+
 }
