@@ -13,18 +13,23 @@ MapHallBuilder::~MapHallBuilder() {
 }
 
 void MapHallBuilder::buildBorders() {
-    int hallWidth = std::get<0>(this->_hall->getDimentions());
-    int hallLat = std::get<1>(this->_hall->getDimentions());
+    int hallRow = std::get<0>(this->_hall->getDimentions());
+    int hallColumn = std::get<1>(this->_hall->getDimentions());
 
-    for(int row = 0; row < hallWidth; row = hallWidth - 1){
-        for(int column =0; column< hallLat; column++){
+    for(int row = 0; row < hallRow; row = hallRow - 1){
+        for(int column =0; column< hallColumn; column++){
             this->_hall->getMapReference()[row][column] = MapBlock::Wall;
         }
     }
 }
 
 void MapHallBuilder::buildStructures() {
+    int hallRow = std::get<0>(this->_hall->getDimentions());
+    int hallColumn = std::get<1>(this->_hall->getDimentions());
 
+    int doorPlacementRow = hallRow / 2;
+    this->_hall->getMapReference()[doorPlacementRow][hallColumn] = MapBlock::Door;
+    this->_hall->getMapReference()[doorPlacementRow][0] = MapBlock::Door;
 }
 
 void MapHallBuilder::populateWithEnemies() {
