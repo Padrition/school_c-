@@ -12,8 +12,8 @@ void MapDirector::changeBuilder(MapBuilder *mapBuilder) {
     this->_mapBuilder = mapBuilder;
 }
 
-void MapDirector::buildBasicMap() {
-    //this->_mapBuilder->buildA();
-    //this->_mapBuilder->buildB();
-    //this->_mapBuilder->buildC();
+Map* MapDirector::buildWithNoEnemies() {
+    this->_mapBuilder->buildBorders();
+    this->_mapBuilder->buildStructures();
+    return this->_mapBuilder->build();
 }

@@ -12,7 +12,7 @@ private:
 public:
     MapDirector(MapBuilder* mapBuilder);
     void changeBuilder(MapBuilder* mapBuilder);
-    void buildBasicMap();
+    Map* buildWithNoEnemies();
 };
 
 
