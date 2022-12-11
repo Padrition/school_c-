@@ -1,12 +1,13 @@
 #include "EventHandlerComposite.h"
 #include <memory>
 
-EventHandlerComposite::EventHandlerComposite(Character * player){
+EventHandlerComposite::EventHandlerComposite(Character * player, std::shared_ptr<ComponentBase>& renderer){
     this->populateEventChildren(player);
+    this->_renderer = renderer;
 }
 
 void EventHandlerComposite::handle(){
-    renderer |= CatchEvent([&](Event event){
+    _renderer |= CatchEvent([&](Event event){
         for(auto child : m_eventChildren){
             if(child->getEventSignature() == event){
                 child->handle();
