@@ -13,6 +13,7 @@ protected:
 public:
     virtual void buildBorders() = 0;
     virtual void buildStructures() = 0;
+    virtual void buildDoors() = 0;
     virtual void populateWithEnemies() = 0;
     virtual Map* build() = 0;
 };

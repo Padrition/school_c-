@@ -14,6 +14,7 @@ void MapDirector::changeBuilder(MapBuilder *mapBuilder) {
 
 Map* MapDirector::buildWithNoEnemies() {
     this->_mapBuilder->buildBorders();
+    this->_mapBuilder->buildDoors();
     this->_mapBuilder->buildStructures();
     return this->_mapBuilder->build();
 }
