@@ -24,7 +24,7 @@ void MapHallBuilder::buildBorders() {
 }
 
 void MapHallBuilder::buildStructures() {
-    this->buildDoors();
+
 }
 
 void MapHallBuilder::populateWithEnemies() {

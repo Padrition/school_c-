@@ -10,7 +10,6 @@
 
 class MapHallBuilder : public MapBuilder{
 private:
-    void buildDoors();
     const int _maxEnemyCount = 1;
 protected:
     MapHall* _hall;
@@ -19,11 +18,9 @@ public:
     MapHallBuilder();
     ~MapHallBuilder();
     void buildBorders() override;
-
+    void buildDoors();
     void buildStructures() override;
-
     void populateWithEnemies() override;
-
     Map *build() override;
 };
 

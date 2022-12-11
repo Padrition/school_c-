@@ -32,7 +32,7 @@ void MapTombBuilder::buildBorders() {
 }
 
 void MapTombBuilder::buildStructures() {
-    this->buildDoors();
+
 }
 
 void MapTombBuilder::populateWithEnemies() {
